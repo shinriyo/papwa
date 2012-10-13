@@ -2,6 +2,7 @@
 #define __HELLOWORLD_SCENE_H__
 
 #include "cocos2d.h"
+#include "GameMainScene.h"
 
 class HelloWorld : public cocos2d::CCLayer
 {
@@ -14,6 +15,9 @@ public:
     
     // a selector callback
     void menuCloseCallback(CCObject* pSender);
+    
+    // ゲームに行く
+    void gotogameCallback(CCObject* pSender);
 
     // preprocessor macro for "static create()" constructor ( node() deprecated )
     CREATE_FUNC(HelloWorld);
