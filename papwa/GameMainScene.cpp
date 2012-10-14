@@ -12,19 +12,18 @@
 //using namespace cocos2d;
 //using namespace CocosDenshion;
 
-USING_NS_CC;
-
 CCScene* GameMain::scene()
 {
 	// 'scene' is an autorelease object
 	CCScene *scene = CCScene::create();
-	
+
 	// 'layer' is an autorelease object
 	GameMain *layer = GameMain::create();
     
 	// add layer as a child to scene
 	scene->addChild(layer);
-    
+    CCLOG("%s", "GameMain::init");
+   
 	// return the scene
 	return scene;
 }
@@ -43,7 +42,7 @@ bool GameMain::init()
 	{
 		return false;
 	}
-    
+
 //	_tileMap = CCTMXTiledMap::tiledMapWithTMXFile("TileMap.tmx");
     _tileMap = CCTMXTiledMap::create("TileMap.tmx");
     _tileMap->retain();
@@ -59,12 +58,12 @@ bool GameMain::init()
 //	int x = spawnPoint->getStrKey("x")->toInt();
     int x = (int)spawnPoint->objectForKey("x");
 	int y = (int)spawnPoint->objectForKey("y");
-
+    CCSize size = CCDirector::sharedDirector()->getWinSize();
+ 
 	_player = CCSprite::create("Player.png");
 	_player->retain();
-	
 	_player->setPosition(ccp (x, y));
-
+    
 	// 描画順
     this->addChild(_tileMap);
 	this->addChild(_player);

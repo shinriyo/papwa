@@ -6,12 +6,13 @@
 //
 //
 
-#ifndef __papwa__GameMainScene__
-#define __papwa__GameMainScene__
+#ifndef __GameMainScene_H__
+#define __GameMainScene_H__
 
 #include "cocos2d.h"
+USING_NS_CC;
 
-class GameMain : public cocos2d::CCLayer
+class GameMain : public CCLayer
 {
 public:
     ~GameMain();
@@ -19,18 +20,18 @@ public:
 	virtual bool init();
     
 	// there's no 'id' in cpp, so we recommand to return the exactly class pointer
-	static cocos2d::CCScene* scene();
+	static CCScene* scene();
     
-	void setViewpointCenter(cocos2d::CCPoint point);
+	void setViewpointCenter(CCPoint point);
     
 	// implement the "static node()" method manually
 	CREATE_FUNC(GameMain);
     
-    CC_SYNTHESIZE(cocos2d::CCTMXTiledMap*, _tileMap, TileMap);
+    CC_SYNTHESIZE(CCTMXTiledMap*, _tileMap, TileMap);
     
-    CC_SYNTHESIZE(cocos2d::CCTMXLayer*, _background, Background);
+    CC_SYNTHESIZE(CCTMXLayer*, _background, Background);
     
-	CC_SYNTHESIZE(cocos2d::CCSprite *, _player, Player);
+	CC_SYNTHESIZE(CCSprite *, _player, Player);
 };
 
-#endif // __HELLOWORLD_SCENE_H__
+#endif // __GameMainScene_H__
