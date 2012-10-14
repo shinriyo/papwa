@@ -4,6 +4,10 @@
 using namespace cocos2d;
 using namespace CocosDenshion;
 
+#include "CCBReader.h"
+#include "CCNodeLoaderLibrary.h"
+USING_NS_CC_EXT;
+
 CCScene* HelloWorld::scene()
 {
     // 'scene' is an autorelease object
@@ -42,14 +46,14 @@ bool HelloWorld::init()
                                         "CloseNormal.png",
                                         "CloseSelected.png",
                                         this,
-                                        menu_selector(HelloWorld::gotogameCallback) );
+                                        menu_selector(HelloWorld::gotoGameMainCallback) );
     pGotogameItem->setPosition( ccp(size.width / 2, size.height / 2 - 50) );
 
     CCMenuItemImage *pGotooptionItem = CCMenuItemImage::create(
                                         "CloseNormal.png",
                                         "CloseSelected.png",
                                         this,
-                                        menu_selector(HelloWorld::gotogameCallback) );
+                                        menu_selector(HelloWorld::gotoOptionCallback) );
     pGotooptionItem->setPosition( ccp(size.width / 2, size.height / 2 - 90) );
     
     // create menu, it's an autorelease object
@@ -119,10 +123,18 @@ void HelloWorld::menuCloseCallback(CCObject* pSender)
 }
 
 // game
-void HelloWorld::gotogameCallback(CCObject* pSender)
+void HelloWorld::gotoGameMainCallback(CCObject* pSender)
 {
     CCTransitionScene *transition = CCTransitionPageTurn::create(3.0f, GameMain::scene(), false);
-//    CCDirector::sharedDirector()->pushScene(transition);
     CCDirector::sharedDirector()->replaceScene(transition);
-//    CCDirector::sharedDirector()->pushScene(Game::scene());
+}
+
+// option 
+void HelloWorld::gotoOptionCallback(CCObject* pSender)
+{
+    CCTransitionScene *transition = CCTransitionPageTurn::create(3.0f, OptionScene::scene(), false);
+    //    CCDirector::sharedDirector()->pushScene(transition);
+    CCDirector::sharedDirector()->replaceScene(transition);
+    // create a scene. it's an autorelease object
+    //CCScene *pScene = HelloWorld::scene();
 }

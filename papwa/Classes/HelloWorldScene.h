@@ -3,6 +3,7 @@
 
 #include "cocos2d.h"
 #include "GameMainScene.h"
+#include "OptionScene.h"
 
 class HelloWorld : public cocos2d::CCLayer
 {
@@ -17,8 +18,11 @@ public:
     void menuCloseCallback(CCObject* pSender);
     
     // ゲームに行く
-    void gotogameCallback(CCObject* pSender);
-
+    void gotoGameMainCallback(CCObject* pSender);
+    
+    // オプションに行く
+    void gotoOptionCallback(CCObject* pSender);
+    
     // preprocessor macro for "static create()" constructor ( node() deprecated )
     CREATE_FUNC(HelloWorld);
 };

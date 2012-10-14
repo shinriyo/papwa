@@ -10,8 +10,11 @@
 
 #include "cocos2d.h"
 #include "HelloWorldScene.h"
+#include "CCBReader.h"
+#include "CCNodeLoaderLibrary.h"
 
 USING_NS_CC;
+USING_NS_CC_EXT;
 
 AppDelegate::AppDelegate()
 {
@@ -36,13 +39,28 @@ bool AppDelegate::applicationDidFinishLaunching()
 
     // set FPS. the default value is 1.0/60 if you don't call this
     pDirector->setAnimationInterval(1.0 / 60);
-
+    /* 本来の */
     // create a scene. it's an autorelease object
     CCScene *pScene = HelloWorld::scene();
-
+    
     // run
     pDirector->runWithScene(pScene);
-
+    /**/
+    
+    /**
+    // もしCocosBuildrにしたら
+    CCNodeLoaderLibrary * ccNodeLoaderLibrary = CCNodeLoaderLibrary::sharedCCNodeLoaderLibrary();
+    CCBReader * ccbReader = new CCBReader(ccNodeLoaderLibrary);
+    CCNode * node = ccbReader->readNodeGraphFromFile("CCBTest.ccbi");
+    
+    CCScene * scene = CCScene::create();
+    if(node != NULL) {
+        scene->addChild(node);
+    }
+    ccbReader->release();
+    pDirector->runWithScene(scene);
+    /**/
+    
     return true;
 }
 

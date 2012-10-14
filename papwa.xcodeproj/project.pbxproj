@@ -212,6 +212,10 @@
 		BD5E3EFA162A7788002BEDAB /* tmw_desert_spacing.png in Resources */ = {isa = PBXBuildFile; fileRef = BD5E3EF9162A7788002BEDAB /* tmw_desert_spacing.png */; };
 		BD5E3EFC162A778F002BEDAB /* Player.png in Resources */ = {isa = PBXBuildFile; fileRef = BD5E3EFB162A778F002BEDAB /* Player.png */; };
 		BD5E3EFE162A77A8002BEDAB /* meta_tiles.png in Resources */ = {isa = PBXBuildFile; fileRef = BD5E3EFD162A77A8002BEDAB /* meta_tiles.png */; };
+		BD75FCF5162A795000DCF262 /* OptionScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BD75FCF3162A795000DCF262 /* OptionScene.cpp */; };
+		BD75FD01162ACF0900DCF262 /* enemy1.png in Resources */ = {isa = PBXBuildFile; fileRef = BD75FD00162ACF0900DCF262 /* enemy1.png */; };
+		BD75FD86162ADB1500DCF262 /* GameOverScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BD75FD84162ADB1400DCF262 /* GameOverScene.cpp */; };
+		BD75FD89162ADF4000DCF262 /* HelloWorldHud.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BD75FD87162ADF3F00DCF262 /* HelloWorldHud.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -661,6 +665,14 @@
 		BD5E3EF9162A7788002BEDAB /* tmw_desert_spacing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tmw_desert_spacing.png; path = Resources/tmw_desert_spacing.png; sourceTree = "<group>"; };
 		BD5E3EFB162A778F002BEDAB /* Player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Player.png; path = Resources/Player.png; sourceTree = "<group>"; };
 		BD5E3EFD162A77A8002BEDAB /* meta_tiles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = meta_tiles.png; path = Resources/meta_tiles.png; sourceTree = "<group>"; };
+		BD75FCF3162A795000DCF262 /* OptionScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OptionScene.cpp; sourceTree = "<group>"; };
+		BD75FCF4162A795000DCF262 /* OptionScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionScene.h; sourceTree = "<group>"; };
+		BD75FD00162ACF0900DCF262 /* enemy1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = enemy1.png; path = Resources/enemy1.png; sourceTree = "<group>"; };
+		BD75FD83162AD90200DCF262 /* CCBTest.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = CCBTest.ccbi; path = Resources/CCBTest.ccbi; sourceTree = "<group>"; };
+		BD75FD84162ADB1400DCF262 /* GameOverScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameOverScene.cpp; sourceTree = "<group>"; };
+		BD75FD85162ADB1400DCF262 /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverScene.h; sourceTree = "<group>"; };
+		BD75FD87162ADF3F00DCF262 /* HelloWorldHud.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HelloWorldHud.cpp; sourceTree = "<group>"; };
+		BD75FD88162ADF4000DCF262 /* HelloWorldHud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelloWorldHud.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -730,9 +742,11 @@
 		238F293C1622EFB0002007F3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BD75FD00162ACF0900DCF262 /* enemy1.png */,
 				BD5E3EF9162A7788002BEDAB /* tmw_desert_spacing.png */,
 				BD5E3EFD162A77A8002BEDAB /* meta_tiles.png */,
 				BD5E3EF6162A777D002BEDAB /* TileMap.tmx */,
+				BD75FD83162AD90200DCF262 /* CCBTest.ccbi */,
 				238F293D1622EFB0002007F3 /* CloseNormal.png */,
 				238F293F1622EFB0002007F3 /* CloseSelected.png */,
 				238F29411622EFB0002007F3 /* Default.png */,
@@ -1579,6 +1593,12 @@
 				238F2BDD1622EFBA002007F3 /* HelloWorldScene.cpp */,
 				238F2BE61622F088002007F3 /* GameMainScene.h */,
 				238F2BE51622F088002007F3 /* GameMainScene.cpp */,
+				BD75FCF4162A795000DCF262 /* OptionScene.h */,
+				BD75FCF3162A795000DCF262 /* OptionScene.cpp */,
+				BD75FD85162ADB1400DCF262 /* GameOverScene.h */,
+				BD75FD84162ADB1400DCF262 /* GameOverScene.cpp */,
+				BD75FD88162ADF4000DCF262 /* HelloWorldHud.h */,
+				BD75FD87162ADF3F00DCF262 /* HelloWorldHud.cpp */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -1649,6 +1669,7 @@
 				BD5E3EFA162A7788002BEDAB /* tmw_desert_spacing.png in Resources */,
 				BD5E3EFC162A778F002BEDAB /* Player.png in Resources */,
 				BD5E3EFE162A77A8002BEDAB /* meta_tiles.png in Resources */,
+				BD75FD01162ACF0900DCF262 /* enemy1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1839,6 +1860,9 @@
 				238F2BDB1622EFB9002007F3 /* AppDelegate.cpp in Sources */,
 				238F2BDE1622EFBA002007F3 /* HelloWorldScene.cpp in Sources */,
 				238F2BE71622F088002007F3 /* GameMainScene.cpp in Sources */,
+				BD75FCF5162A795000DCF262 /* OptionScene.cpp in Sources */,
+				BD75FD86162ADB1500DCF262 /* GameOverScene.cpp in Sources */,
+				BD75FD89162ADF4000DCF262 /* HelloWorldHud.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
