@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "papwa/GameMainScene.cpp"
-         timestampString = "371911749.846496"
+         timestampString = "371956279.310407"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "105"
-         endingLineNumber = "105"
+         startingLineNumber = "117"
+         endingLineNumber = "117"
          landmarkName = "GameMain::ccTouchEnded(CCTouch *touch, CCEvent *event)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -47,12 +47,25 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "papwa/GameMainScene.cpp"
-         timestampString = "371911749.846496"
+         timestampString = "371956279.310407"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "184"
-         endingLineNumber = "184"
+         startingLineNumber = "196"
+         endingLineNumber = "196"
          landmarkName = "GameMain::ccTouchEnded(CCTouch *touch, CCEvent *event)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "papwa/GameMainScene.cpp"
+         timestampString = "371956638.18245"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "221"
+         endingLineNumber = "221"
+         landmarkName = "GameMain::setPlayerPosition(cocos2d::CCPoint position)"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

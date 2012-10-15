@@ -10,6 +10,8 @@
 #define __GameMainScene_H__
 
 #include "cocos2d.h"
+#include "GameHud.h"
+
 USING_NS_CC;
 
 class GameMain : public CCLayer
@@ -37,7 +39,10 @@ public:
  
     CC_SYNTHESIZE(CCTMXTiledMap*, _tileMap, TileMap);
     CC_SYNTHESIZE(CCTMXLayer*, _background, Background);
+	CC_SYNTHESIZE(CCTMXLayer*, _foreground, Foreground);
 	CC_SYNTHESIZE(CCSprite *, _player, Player);
+    CC_SYNTHESIZE(GameHud *, _hud, Hud);
+	CC_SYNTHESIZE(int, _numCollected, NumCollected);
     CC_SYNTHESIZE(cocos2d::CCTMXLayer*, _meta, Meta);
     
 };

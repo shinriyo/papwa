@@ -14,6 +14,8 @@ using namespace CocosDenshion;
 
 CCScene* GameMain::scene()
 {
+    CCLOG("%s", "GameMain::scene");
+    
 	// 'scene' is an autorelease object
 	CCScene *scene = CCScene::create();
 
@@ -22,7 +24,13 @@ CCScene* GameMain::scene()
     
 	// add layer as a child to scene
 	scene->addChild(layer);
-    CCLOG("%s", "GameMain::scene");
+    
+    GameHud *hud = GameHud::create();
+	hud->retain();
+	scene->addChild(hud);
+	layer->setHud(hud);
+	hud->setGameLayer(layer);
+    
    
 	// return the scene
 	return scene;
@@ -32,6 +40,7 @@ GameMain::~GameMain()
 {
 	CC_SAFE_RELEASE_NULL(_tileMap);
 	CC_SAFE_RELEASE_NULL(_background);
+    CC_SAFE_RELEASE_NULL(_foreground);
 	CC_SAFE_RELEASE_NULL(_player);
 }
 
@@ -48,8 +57,17 @@ bool GameMain::init()
     _tileMap = CCTMXTiledMap::create("TileMap.tmx");
     _tileMap->retain();
     
+    // マップ背景だがアクセスはされてない？
 	_background = _tileMap->layerNamed("Background");
     _background->retain();
+    
+    // アイテム・障害物レイヤー
+    _foreground = _tileMap->layerNamed("Foreground");
+    _foreground->retain();
+	
+    // 
+	_meta = _tileMap->layerNamed("Meta");
+	_meta->retain();
 
 	CCTMXObjectGroup *objects = _tileMap->objectGroupNamed("Objects");
 	CCAssert(objects != NULL, "'Objects' object group not found");
@@ -73,7 +91,9 @@ bool GameMain::init()
 
 	// これがないとタッチが有効にならない
 	this->setTouchEnabled(true);
-	
+    // アイテム数の初期化
+	_numCollected = 0;
+    
 	return true;
 }
 
@@ -195,37 +215,49 @@ void GameMain::setPlayerPosition(cocos2d::CCPoint position)
     CCLOG("setPlayerPosition");
 
 	CCPoint tileCoord = this->tileCoordForPosition(position);
-        /* あとで
-         int tileGid = _meta->tileGIDAt(tileCoord);
+    // 障害物
+    int tileGid = _meta->tileGIDAt(tileCoord);
 	if (tileGid)
 	{
-		CCDictionary<std::string, CCString*> *properties = _tileMap->propertiesForGID(tileGid);
+//		CCDictionary<std::string, CCString*> *properties = _tileMap->propertiesForGID(tileGid);
+        CCDictionary *properties = _tileMap->propertiesForGID(tileGid);
+        
 		if (properties)
 		{
-			CCString *collision = properties->objectForKey("Collidable");
-			if (collision && (collision->toStdString().compare("True") == 0))
+            // 衝突の有無
+			//CCString *collision = properties->objectForKey("Collidable");
+            CCString *collision = ((CCString *)properties->objectForKey("Collidable"));
+            
+			//if (collision && (collision->toStdString().compare("True") == 0))
+			if (collision && (collision->compare("True") == 0))
 			{
 				SimpleAudioEngine::sharedEngine()->playEffect("hit.caf");
 				return;
 			}
 			
-			CCString *collectable = properties->objectForKey("Collectable");
-			if (collectable && (collectable->toStdString().compare("True") == 0))
+            // アイテムの有無
+			//CCString *collectable = properties->objectForKey("Collectable");
+            CCString *collectable = ((CCString *)properties->objectForKey("Collectable"));
+            
+			//if (collectable && (collectable->toStdString().compare("True") == 0))
+			if (collectable && (collectable->compare("True") == 0))
 			{
 				_meta->removeTileAt(tileCoord);
 				_foreground->removeTileAt(tileCoord);
 				
 				_numCollected++;
-				_hud->numCollectedChanged(_numCollected);
+                // HUDはまだ
+//				_hud->numCollectedChanged(_numCollected);
 				SimpleAudioEngine::sharedEngine()->playEffect("pickup.caf");
 				
+                // 勝利面判定
 				if (_numCollected == 2) {
-					this->win();
+//					this->win();
 				}
 			}
 		}
 	}
-         */
+
 	SimpleAudioEngine::sharedEngine()->playEffect("move.caf");
 	_player->setPosition(position);
 }

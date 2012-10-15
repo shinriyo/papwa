@@ -215,7 +215,7 @@
 		BD75FCF5162A795000DCF262 /* OptionScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BD75FCF3162A795000DCF262 /* OptionScene.cpp */; };
 		BD75FD01162ACF0900DCF262 /* enemy1.png in Resources */ = {isa = PBXBuildFile; fileRef = BD75FD00162ACF0900DCF262 /* enemy1.png */; };
 		BD75FD86162ADB1500DCF262 /* GameOverScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BD75FD84162ADB1400DCF262 /* GameOverScene.cpp */; };
-		BD75FD89162ADF4000DCF262 /* HelloWorldHud.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BD75FD87162ADF3F00DCF262 /* HelloWorldHud.cpp */; };
+		BD75FD89162ADF4000DCF262 /* GameHud.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BD75FD87162ADF3F00DCF262 /* GameHud.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -671,8 +671,8 @@
 		BD75FD83162AD90200DCF262 /* CCBTest.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = CCBTest.ccbi; path = Resources/CCBTest.ccbi; sourceTree = "<group>"; };
 		BD75FD84162ADB1400DCF262 /* GameOverScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameOverScene.cpp; sourceTree = "<group>"; };
 		BD75FD85162ADB1400DCF262 /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverScene.h; sourceTree = "<group>"; };
-		BD75FD87162ADF3F00DCF262 /* HelloWorldHud.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HelloWorldHud.cpp; sourceTree = "<group>"; };
-		BD75FD88162ADF4000DCF262 /* HelloWorldHud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelloWorldHud.h; sourceTree = "<group>"; };
+		BD75FD87162ADF3F00DCF262 /* GameHud.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameHud.cpp; sourceTree = "<group>"; };
+		BD75FD88162ADF4000DCF262 /* GameHud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameHud.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1597,8 +1597,8 @@
 				BD75FCF3162A795000DCF262 /* OptionScene.cpp */,
 				BD75FD85162ADB1400DCF262 /* GameOverScene.h */,
 				BD75FD84162ADB1400DCF262 /* GameOverScene.cpp */,
-				BD75FD88162ADF4000DCF262 /* HelloWorldHud.h */,
-				BD75FD87162ADF3F00DCF262 /* HelloWorldHud.cpp */,
+				BD75FD88162ADF4000DCF262 /* GameHud.h */,
+				BD75FD87162ADF3F00DCF262 /* GameHud.cpp */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -1629,7 +1629,7 @@
 		238F291E1622EFB0002007F3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0430;
 			};
 			buildConfigurationList = 238F29211622EFB0002007F3 /* Build configuration list for PBXProject "papwa" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1862,7 +1862,7 @@
 				238F2BE71622F088002007F3 /* GameMainScene.cpp in Sources */,
 				BD75FCF5162A795000DCF262 /* OptionScene.cpp in Sources */,
 				BD75FD86162ADB1500DCF262 /* GameOverScene.cpp in Sources */,
-				BD75FD89162ADF4000DCF262 /* HelloWorldHud.cpp in Sources */,
+				BD75FD89162ADF4000DCF262 /* GameHud.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1895,7 +1895,7 @@
 					"\"$(PROJECT_NAME)/libs/cocos2dx/platform/ios\"",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
-				SDKROOT = iphoneos5.1;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -1923,7 +1923,7 @@
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				SDKROOT = iphoneos5.1;
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};
