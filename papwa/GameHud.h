@@ -1,20 +1,27 @@
 //
-//  HelloWorldHud.h
+//  GameHud.h
 //  papwa
 //
 //  Created by sugita on 12/10/14.
 //  Copyright 2012年 __MyCompanyName__. All rights reserved.
 
-#ifndef __HelloWorldHud_H__
-#define __HelloWorldHud_H__ 
+#ifndef __GameHud_H__
+#define __GameHud_H__ 
 
 #include "cocos2d.h"
 
-class HelloWorldHud : public cocos2d::CCLayer
+USING_NS_CC;
+
+class GameMain;
+
+class GameHud : public cocos2d::CCLayer
 {
+    cocos2d::CCLabelTTF *_label;
 public:
-    ~HelloWorldHud();
+    ~GameHud();
     virtual bool init();  
+	void numCollectedChanged(int numCollected);
+	void projectileButtonTapped(CCObject *sender);
     
     // touch detection
    	virtual bool ccTouchBegan(cocos2d::CCTouch *touch, cocos2d::CCEvent *event);
@@ -24,8 +31,10 @@ public:
     
     // implement the "static node()" method manually
     // LAYER_NODE_FUNC does not exist in version2.x
-    // LAYER_NODE_FUNC(HelloWorldHud);
-	CREATE_FUNC(HelloWorldHud);
+    // LAYER_NODE_FUNC(GameHud);
+	CREATE_FUNC(GameHud);
+    
+    CC_SYNTHESIZE(GameMain *, _gameLayer, GameLayer);
 };
 
-#endif // __HelloWorldHudH__
+#endif // __GameHudH__
