@@ -39,7 +39,7 @@ bool AppDelegate::applicationDidFinishLaunching()
 
     // set FPS. the default value is 1.0/60 if you don't call this
     pDirector->setAnimationInterval(1.0 / 60);
-    /* 本来の */
+    /* 本来の *
     // create a scene. it's an autorelease object
     CCScene *pScene = HelloWorld::scene();
     
@@ -47,13 +47,14 @@ bool AppDelegate::applicationDidFinishLaunching()
     pDirector->runWithScene(pScene);
     /**/
     
-    /**
+    /**/
     // もしCocosBuildrにしたら
     CCNodeLoaderLibrary * ccNodeLoaderLibrary = CCNodeLoaderLibrary::sharedCCNodeLoaderLibrary();
     CCBReader * ccbReader = new CCBReader(ccNodeLoaderLibrary);
-    CCNode * node = ccbReader->readNodeGraphFromFile("CCBTest.ccbi");
-    
+//    CCNode * node = ccbReader->readNodeGraphFromFile("CCBTest.ccbi");
     CCScene * scene = CCScene::create();
+    CCNode * node = ccbReader->readNodeGraphFromFile("","CCBTest.ccbi",scene);
+    
     if(node != NULL) {
         scene->addChild(node);
     }

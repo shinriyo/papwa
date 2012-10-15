@@ -16,7 +16,7 @@ USING_NS_CC;
 CCScene* HelloWorldHud::scene()
 {
 	// 'scene' is an autorelease object
-	CCScene *scene = CCScene::node();
+	CCScene *scene = CCScene::create();
     
 	// 'layer' is an autorelease object
     // deprecated in v2.0
