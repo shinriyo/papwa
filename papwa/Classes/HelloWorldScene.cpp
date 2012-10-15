@@ -125,8 +125,9 @@ void HelloWorld::menuCloseCallback(CCObject* pSender)
 // game
 void HelloWorld::gotoGameMainCallback(CCObject* pSender)
 {
-    CCTransitionScene *transition = CCTransitionPageTurn::create(3.0f, GameMain::scene(), false);
-    CCDirector::sharedDirector()->replaceScene(transition);
+//    CCTransitionScene *transition = CCTransitionPageTurn::create(3.0f, GameMain::scene(), false);
+//    CCDirector::sharedDirector()->replaceScene(transition);
+    CCDirector::sharedDirector()->replaceScene(CCTransitionCrossFade::create(1.0f, GameMain::scene()));
 }
 
 // option 
