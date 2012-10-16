@@ -11,6 +11,7 @@
 
 #include "cocos2d.h"
 #include "GameHud.h"
+#include "GameOverScene.h"
 
 USING_NS_CC;
 
@@ -31,7 +32,12 @@ public:
    	void setViewpointCenter(cocos2d::CCPoint point);
 	void setPlayerPosition(cocos2d::CCPoint point);
 	cocos2d::CCPoint tileCoordForPosition(cocos2d::CCPoint position);
- 
+	void projectileMoveFinished(cocos2d::CCSprite *sprite);
+    
+    void testCollisions(cocos2d::CCTime dt);
+    void win();
+	void lose();
+    
 	// implement the "static node()" method manually
 	CREATE_FUNC(GameMain);
     // ゲーム状態
@@ -44,7 +50,8 @@ public:
     CC_SYNTHESIZE(GameHud *, _hud, Hud);
 	CC_SYNTHESIZE(int, _numCollected, NumCollected);
     CC_SYNTHESIZE(cocos2d::CCTMXLayer*, _meta, Meta);
-    
+    CC_SYNTHESIZE(CCArray *, _enemies, Enemies);
+	CC_SYNTHESIZE(CCArray *, _projectiles, Projectiles);
 };
 
 #endif // __GameMainScene_H__
