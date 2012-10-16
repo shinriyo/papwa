@@ -71,6 +71,14 @@ GameHud::~GameHud()
 }
 
 
+void GameHud::numCollectedChanged(int numCollected)
+{
+	char *str = (char *)malloc(sizeof(str) * 10);
+	sprintf(str, "%d", numCollected);
+	_label->setString(str);
+	free(str);
+}
+
 void GameHud::projectileButtonTapped(CCObject *sender)
 {
 	if (_gameLayer->getMode() == 0)
@@ -81,5 +89,4 @@ void GameHud::projectileButtonTapped(CCObject *sender)
     {
 		_gameLayer->setMode(0);
 	}
-    
 }

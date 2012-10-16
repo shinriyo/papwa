@@ -247,7 +247,7 @@ void GameMain::setPlayerPosition(cocos2d::CCPoint position)
 				
 				_numCollected++;
                 // HUDはまだ
-//				_hud->numCollectedChanged(_numCollected);
+				_hud->numCollectedChanged(_numCollected);
 				SimpleAudioEngine::sharedEngine()->playEffect("pickup.caf");
 				
                 // 勝利面判定
@@ -270,6 +270,7 @@ CCPoint GameMain::tileCoordForPosition(cocos2d::CCPoint position)
     return ccp(x, y);
 }
 
+// ビューを真ん中へ
 void GameMain::setViewpointCenter(CCPoint position)
 {
 	CCSize winSize = CCDirector::sharedDirector()->getWinSize();
@@ -278,7 +279,7 @@ void GameMain::setViewpointCenter(CCPoint position)
 	int y = MAX(position.y, winSize.height / 2);
 	
 	x = MIN(x, (_tileMap->getMapSize().width * _tileMap->getTileSize().width) - winSize.width/2);
-	x = MIN(x, (_tileMap->getMapSize().height * _tileMap->getTileSize().height) - winSize.height/2);
+	y = MIN(y, (_tileMap->getMapSize().height * _tileMap->getTileSize().height) - winSize.height/2);
 	
 	CCPoint actualPosition = ccp(x, y);
 	
