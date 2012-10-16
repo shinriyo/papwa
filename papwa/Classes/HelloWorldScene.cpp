@@ -4,6 +4,7 @@
 using namespace cocos2d;
 using namespace CocosDenshion;
 
+#include "CCUIScrollView.h"
 #include "CCBReader.h"
 #include "CCNodeLoaderLibrary.h"
 USING_NS_CC_EXT;
@@ -107,6 +108,10 @@ bool HelloWorld::init()
 
     // add the sprite as a child to this layer
     this->addChild(pSprite, 0);
+   
+    // CCUIScrollViewの実験
+    CCUIScrollView *scrollView = CCUIScrollView::scrollViewWithCCRect(CCRectMake(20, 20, 444, 200));
+    this->addChild(scrollView);
     
     return true;
 }

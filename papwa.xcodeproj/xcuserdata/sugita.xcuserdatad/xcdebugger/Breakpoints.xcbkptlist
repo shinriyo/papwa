@@ -68,5 +68,18 @@
          landmarkName = "GameMain::setPlayerPosition(cocos2d::CCPoint position)"
          landmarkType = "5">
       </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "papwa/Classes/CCUIScrollView.cpp"
+         timestampString = "372042517.556807"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "20"
+         endingLineNumber = "20"
+         landmarkName = "CCUIScrollView::getScrollLayerCellAtIndex(int i)"
+         landmarkType = "5">
+      </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>
