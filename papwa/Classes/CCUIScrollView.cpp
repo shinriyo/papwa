@@ -146,7 +146,8 @@ bool CCUIScrollView::getIsTouchInContentLayer( CCTouch *pTouch){
     contentLayerRect.size = contentLayer->getContentSize();
 #warning this is for test
     printf("RectOrigin:%f,%f  RectSize:%f,%f\n",contentLayerRect.origin.x,contentLayerRect.origin.y,contentLayerRect.size.width,contentLayerRect.size.height);
-    return CCRect::CCRectContainsPoint(contentLayerRect, nodeSpaceLocation);
+    //return CCRect::CCRectContainsPoint(contentLayerRect, nodeSpaceLocation);
+    return contentLayerRect.containsPoint(nodeSpaceLocation);
 }
 
 void CCUIScrollView::visit(){

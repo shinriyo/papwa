@@ -43,9 +43,8 @@ GameMain::~GameMain()
     CC_SAFE_RELEASE_NULL(_background);
     CC_SAFE_RELEASE_NULL(_foreground);
     CC_SAFE_RELEASE_NULL(_player);
-    CC_SAFE_RELEASE_NULL(_meta);
 	CC_SAFE_RELEASE_NULL(_hud);
-    
+    CC_SAFE_RELEASE_NULL(_meta);
 	CC_SAFE_RELEASE_NULL(_enemies);
 	CC_SAFE_RELEASE_NULL(_projectiles);
 }
@@ -294,7 +293,7 @@ void GameMain::ccTouchEnded(CCTouch *touch, CCEvent *event)
 }
 
 // Playerの座標
-void GameMain::setPlayerPosition(cocos2d::CCPoint position)
+void GameMain::setPlayerPosition(CCPoint position)
 {
     CCLOG("setPlayerPosition");
 
@@ -381,7 +380,7 @@ void GameMain::projectileMoveFinished(CCSprite *sprite)
 }
 
 // スケジュール
-void GameMain::testCollisions(cocos2d::CCTime dt)
+void GameMain::testCollisions(CCTime dt)
 {
     //CCMutableArray<CCSprite*> *projectilesToDelete = new CCMutableArray<CCSprite*>;
     CCArray *projectilesToDelete = new CCArray();

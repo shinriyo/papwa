@@ -665,6 +665,10 @@
 		238F2BDD1622EFBA002007F3 /* HelloWorldScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = HelloWorldScene.cpp; path = Classes/HelloWorldScene.cpp; sourceTree = "<group>"; };
 		238F2BE51622F088002007F3 /* GameMainScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameMainScene.cpp; sourceTree = "<group>"; };
 		238F2BE61622F088002007F3 /* GameMainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameMainScene.h; sourceTree = "<group>"; };
+		239F0AAC162F17780061E4B3 /* hit.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = hit.caf; path = Resources/hit.caf; sourceTree = "<group>"; };
+		239F0AAD162F17780061E4B3 /* move.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = move.caf; path = Resources/move.caf; sourceTree = "<group>"; };
+		239F0AAE162F17780061E4B3 /* pickup.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = pickup.caf; path = Resources/pickup.caf; sourceTree = "<group>"; };
+		239F0AAF162F17780061E4B3 /* TileMap.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = TileMap.caf; path = Resources/TileMap.caf; sourceTree = "<group>"; };
 		BD204672162CEAAB0019C148 /* CCUIScrollView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CCUIScrollView.cpp; path = Classes/CCUIScrollView.cpp; sourceTree = "<group>"; };
 		BD204673162CEAAB0019C148 /* CCUIScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCUIScrollView.h; path = Classes/CCUIScrollView.h; sourceTree = "<group>"; };
 		BD204676162CEE210019C148 /* projectile-button-off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "projectile-button-off.png"; path = "Resources/projectile-button-off.png"; sourceTree = "<group>"; };
@@ -751,6 +755,10 @@
 		238F293C1622EFB0002007F3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				239F0AAC162F17780061E4B3 /* hit.caf */,
+				239F0AAD162F17780061E4B3 /* move.caf */,
+				239F0AAE162F17780061E4B3 /* pickup.caf */,
+				239F0AAF162F17780061E4B3 /* TileMap.caf */,
 				BD204676162CEE210019C148 /* projectile-button-off.png */,
 				BD204677162CEE210019C148 /* projectile-button-on.png */,
 				BD75FD00162ACF0900DCF262 /* enemy1.png */,

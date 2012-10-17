@@ -14,7 +14,7 @@
 
 bool GameOverScene::init()
 {
-    if( CCScene::init() )
+    if (CCScene::init())
     {
         //this->_layer = GameOverLayer::node();
         this->_layer = GameOverLayer::create();
@@ -43,9 +43,9 @@ bool GameOverLayer::init()
     if (CCLayerColor::initWithColor (ccc4 ( 255 , 255 , 255 , 255 )))
     {
         CCSize winSize = CCDirector::sharedDirector()->getWinSize();
-        this->_label = CCLabelTTF::create("","Artial", 32);
+        this->_label = CCLabelTTF::create("", "Artial", 32);
         //_label->setColor(cocos2d::ccc3(0,0,0));
-        _label->setColor(ccc3(0,0,0));
+        _label->setColor(ccc3(0, 0, 0));
         _label->setPosition(ccp(winSize.width/2, winSize.height/2));
         this->addChild(_label);
         
@@ -58,14 +58,17 @@ bool GameOverLayer::init()
         
         return true;
     }
-    else {
+    else
+    {
         return false;
     }
 }
 
 void GameOverLayer::gameOverDone()
 {
-    CCDirector::sharedDirector()->replaceScene(HelloWorld::scene());
+//    CCDirector::sharedDirector()->replaceScene(GameMain::scene());
+    CCDirector::sharedDirector()->replaceScene(CCTransitionCrossFade::create(1.0f, GameMain::scene()));
+
 }
 
 GameOverLayer::~GameOverLayer()
