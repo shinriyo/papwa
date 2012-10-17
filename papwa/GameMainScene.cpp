@@ -205,7 +205,7 @@ void GameMain::ccTouchEnded(CCTouch *touch, CCEvent *event)
         */
         //CCPoint touchLocation = touch->locationInView();
         CCPoint touchLocation = touch->getLocationInView();
-        
+        // OpenGL座標へ一旦置き換える
         touchLocation = CCDirector::sharedDirector()->convertToGL(touchLocation);
         //  画面上のワールド座標に変換
         touchLocation = this->convertToNodeSpace(touchLocation);
@@ -243,7 +243,8 @@ void GameMain::ccTouchEnded(CCTouch *touch, CCEvent *event)
     } else {
         // Find where the touch is
         CCPoint touchLocation = touch->getLocationInView();    
-        
+        // OpenGL座標へ一旦置き換える
+        touchLocation = CCDirector::sharedDirector()->convertToGL(touchLocation);
         //  画面上のワールド座標に変換
         touchLocation = this->convertToNodeSpace(touchLocation);
         
@@ -258,7 +259,7 @@ void GameMain::ccTouchEnded(CCTouch *touch, CCEvent *event)
         // Are we shooting to the left or right?
         CCPoint diff = ccpSub(touchLocation, _player->getPosition());
 
-        // 弾の出現位置
+        // 弾の消える位置
         if (diff.x > 0)
         {
             realX = (_tileMap->getMapSize().width * _tileMap->getTileSize().width) +
@@ -267,6 +268,7 @@ void GameMain::ccTouchEnded(CCTouch *touch, CCEvent *event)
             realX = -(_tileMap->getMapSize().width * _tileMap->getTileSize().width) -
             (projectile->getContentSize().width/2);
         }
+
         float ratio = (float) diff.y / (float) diff.x;
         int realY = ((realX - projectile->getPosition().x) * ratio) + projectile->getPosition().y;
         CCPoint realDest = ccp(realX, realY);
@@ -280,8 +282,10 @@ void GameMain::ccTouchEnded(CCTouch *touch, CCEvent *event)
         float realMoveDuration = length/velocity;
         
         // Move projectile to actual endpoint
+        // 実際の終了地点まで飛ばす
         CCFiniteTimeAction *actionMoveTo = CCMoveTo::create(realMoveDuration, realDest);
 
+        // 消す処理
         CCFiniteTimeAction *actionMoveDone = CCCallFuncN::create(this, callfuncN_selector(GameMain::projectileMoveFinished));
         projectile->runAction(CCSequence::create(actionMoveTo, actionMoveDone));
         
@@ -415,7 +419,8 @@ void GameMain::testCollisions(cocos2d::CCTime dt)
                                            target->getContentSize().height);
             
             //if (CCRect::CCRectIntersectsRect(projectileRect, targetRect)) {
-            if (targetRect.intersectsRect(targetRect)) {
+            if (projectileRect.intersectsRect(targetRect))
+            {
                 targetsToDelete->addObject(target);
             }
         }
