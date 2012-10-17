@@ -101,7 +101,23 @@ bool GameMain::init()
     this->setViewpointCenter(_player->getPosition());
 
     // 敵の初期化
-    
+   	//CCMutableArray<CCStringToStringDictionary*> *allObjects = objects->getObjects();
+   	CCArray *allObjects = objects->getObjects();
+	//CCMutableArray<CCStringToStringDictionary*>::CCMutableArrayIterator it;
+	//for (it = allObjects->begin(); it != allObjects->end(); ++it)
+    CCObject *it = NULL;
+    CCARRAY_FOREACH( allObjects, it )
+	{
+		//if ((*it)->objectForKey(std::string("Enemy")) != NULL)
+		if (static_cast<CCDictionary*>(it)->objectForKey("Enemy") != NULL)
+		{
+			//int x = (*it)->objectForKey("x")->toInt();
+			//int y = (*it)->objectForKey("y")->toInt();
+            int x = ((CCString *)(static_cast<CCDictionary*>(it)->objectForKey("x")))->intValue();
+            int y = ((CCString *)(static_cast<CCDictionary*>(it)->objectForKey("y")))->intValue();
+			this->addEnemyAt(x, y);
+		}
+	}
     
     // これがないとタッチが有効にならない
     this->setTouchEnabled(true);
@@ -112,6 +128,54 @@ bool GameMain::init()
     this->schedule(schedule_selector(GameMain::testCollisions));
     
     return true;
+}
+
+// 敵の追加
+void GameMain::addEnemyAt(int x, int y)
+{
+	//CCSprite *enemy = CCSprite::spriteWithFile("enemy1.png");
+	CCSprite *enemy = CCSprite::create("enemy1.png");
+	enemy->retain();
+	enemy->setPosition(ccp(x, y));
+	this->addChild(enemy);
+	// Use our animation method and
+	// start the enemy moving toward the player
+	this->animateEnemy(enemy);
+	_enemies->addObject(enemy);
+}
+
+// callback. starts another iteration of enemy movement.
+void GameMain::enemyMoveFinished(cocos2d::CCSprite *enemy)
+{
+	this->animateEnemy(enemy);
+}
+
+// a method to move the enemy 10 pixels toward the player
+void GameMain::animateEnemy(CCSprite *enemy)
+{
+	// speed of the enemy
+	float actualDuration = 0.3;
+    
+	//rotate to face the player
+	CCPoint diff = ccpSub(_player->getPosition(), enemy->getPosition());
+	float angleRadians = atanf((float)diff.y / (float)diff.x);
+	float angleDegrees = CC_RADIANS_TO_DEGREES(angleRadians);
+	float cocosAngle = -1 * angleDegrees;
+	if (diff.x < 0) {
+		cocosAngle += 180;
+	}
+	enemy->setRotation(cocosAngle);
+	
+	//CCPoint moveBy = ccpMult(ccpNormalize(ccpSub(_player->getPosition(),enemy->getPosition())), 10);
+	CCPoint moveBy = ccpMult(ccpNormalize(ccpSub(_player->getPosition(),enemy->getPosition())), 10);
+    
+	// Create the actions
+	//CCFiniteTimeAction *actionMove = CCMoveBy::actionWithDuration(actualDuration, moveBy);
+	CCFiniteTimeAction *actionMove = CCMoveBy::create(actualDuration, moveBy);
+//	CCFiniteTimeAction *actionMoveDone = CCCallFuncN::actionWithTarget(this, callfuncN_selector(HelloWorld::enemyMoveFinished));
+	CCFiniteTimeAction *actionMoveDone = CCCallFuncN::create(this, callfuncN_selector(GameMain::enemyMoveFinished));
+	//enemy->runAction(CCSequence::actions(actionMove,
+	enemy->runAction(CCSequence::create(actionMove, actionMoveDone, NULL));
 }
 
 // レイヤーがタッチイベントを受信する方法を変更するためにこのメソッドをオーバーライドする. 
@@ -184,7 +248,6 @@ void GameMain::ccTouchEnded(CCTouch *touch, CCEvent *event)
         touchLocation = this->convertToNodeSpace(touchLocation);
         
         // Create a projectile and put it at the player's location
-        /*
         CCSprite *projectile = CCSprite::create("Projectile.png");
         //projectile->setPosition(_player->getPosition());
         this->addChild(projectile);
@@ -222,7 +285,6 @@ void GameMain::ccTouchEnded(CCTouch *touch, CCEvent *event)
         projectile->runAction(CCSequence::create(actionMoveTo, actionMoveDone));
         
         _projectiles->addObject(projectile);
-*/
     }
 }
 
