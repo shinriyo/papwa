@@ -211,6 +211,7 @@
 		BD204674162CEAAB0019C148 /* CCUIScrollView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BD204672162CEAAB0019C148 /* CCUIScrollView.cpp */; };
 		BD204678162CEE210019C148 /* projectile-button-off.png in Resources */ = {isa = PBXBuildFile; fileRef = BD204676162CEE210019C148 /* projectile-button-off.png */; };
 		BD204679162CEE210019C148 /* projectile-button-on.png in Resources */ = {isa = PBXBuildFile; fileRef = BD204677162CEE210019C148 /* projectile-button-on.png */; };
+		BD38B8F7162E6CAD003BD2D3 /* Projectile.png in Resources */ = {isa = PBXBuildFile; fileRef = BD38B8F6162E6CAD003BD2D3 /* Projectile.png */; };
 		BD5E3EF7162A777D002BEDAB /* TileMap.tmx in Resources */ = {isa = PBXBuildFile; fileRef = BD5E3EF6162A777D002BEDAB /* TileMap.tmx */; };
 		BD5E3EFA162A7788002BEDAB /* tmw_desert_spacing.png in Resources */ = {isa = PBXBuildFile; fileRef = BD5E3EF9162A7788002BEDAB /* tmw_desert_spacing.png */; };
 		BD5E3EFC162A778F002BEDAB /* Player.png in Resources */ = {isa = PBXBuildFile; fileRef = BD5E3EFB162A778F002BEDAB /* Player.png */; };
@@ -668,6 +669,7 @@
 		BD204673162CEAAB0019C148 /* CCUIScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCUIScrollView.h; path = Classes/CCUIScrollView.h; sourceTree = "<group>"; };
 		BD204676162CEE210019C148 /* projectile-button-off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "projectile-button-off.png"; path = "Resources/projectile-button-off.png"; sourceTree = "<group>"; };
 		BD204677162CEE210019C148 /* projectile-button-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "projectile-button-on.png"; path = "Resources/projectile-button-on.png"; sourceTree = "<group>"; };
+		BD38B8F6162E6CAD003BD2D3 /* Projectile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Projectile.png; path = Resources/Projectile.png; sourceTree = "<group>"; };
 		BD5E3EF6162A777D002BEDAB /* TileMap.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = TileMap.tmx; path = Resources/TileMap.tmx; sourceTree = "<group>"; };
 		BD5E3EF9162A7788002BEDAB /* tmw_desert_spacing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tmw_desert_spacing.png; path = Resources/tmw_desert_spacing.png; sourceTree = "<group>"; };
 		BD5E3EFB162A778F002BEDAB /* Player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Player.png; path = Resources/Player.png; sourceTree = "<group>"; };
@@ -758,6 +760,7 @@
 				BD75FD83162AD90200DCF262 /* CCBTest.ccbi */,
 				238F293D1622EFB0002007F3 /* CloseNormal.png */,
 				238F293F1622EFB0002007F3 /* CloseSelected.png */,
+				BD38B8F6162E6CAD003BD2D3 /* Projectile.png */,
 				238F29411622EFB0002007F3 /* Default.png */,
 				238F29431622EFB0002007F3 /* HelloWorld.png */,
 				238F29451622EFB0002007F3 /* Icon-72.png */,
@@ -1683,6 +1686,7 @@
 				BD75FD01162ACF0900DCF262 /* enemy1.png in Resources */,
 				BD204678162CEE210019C148 /* projectile-button-off.png in Resources */,
 				BD204679162CEE210019C148 /* projectile-button-on.png in Resources */,
+				BD38B8F7162E6CAD003BD2D3 /* Projectile.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

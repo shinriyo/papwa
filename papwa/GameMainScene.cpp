@@ -249,7 +249,7 @@ void GameMain::ccTouchEnded(CCTouch *touch, CCEvent *event)
         
         // Create a projectile and put it at the player's location
         CCSprite *projectile = CCSprite::create("Projectile.png");
-        //projectile->setPosition(_player->getPosition());
+        projectile->setPosition(_player->getPosition());
         this->addChild(projectile);
         
         // Determine where we wish to shoot the projectile to
@@ -258,12 +258,13 @@ void GameMain::ccTouchEnded(CCTouch *touch, CCEvent *event)
         // Are we shooting to the left or right?
         CCPoint diff = ccpSub(touchLocation, _player->getPosition());
 
+        // 弾の出現位置
         if (diff.x > 0)
         {
             realX = (_tileMap->getMapSize().width * _tileMap->getTileSize().width) +
             (projectile->getContentSize().width/2);
         } else {
-            realX = -(_tileMap    ->getMapSize().width * _tileMap->getTileSize().width) -
+            realX = -(_tileMap->getMapSize().width * _tileMap->getTileSize().width) -
             (projectile->getContentSize().width/2);
         }
         float ratio = (float) diff.y / (float) diff.x;
@@ -386,6 +387,8 @@ void GameMain::testCollisions(cocos2d::CCTime dt)
     // iterate through projectiles
     //for (it = _projectiles->begin(); it != _projectiles->end(); it++) {
     CCObject *it = NULL;
+    CCObject *jt = NULL;
+
     CCARRAY_FOREACH( _projectiles, it )
     {
 
@@ -400,7 +403,7 @@ void GameMain::testCollisions(cocos2d::CCTime dt)
        
         // iterate through enemies, see if any intersect with current projectile
         //for (jt = _enemies->begin(); jt != _enemies->end(); jt++)
-        CCObject *jt = NULL;
+        jt = NULL;
         CCARRAY_FOREACH( _enemies, jt )
         {
             //CCSprite *target = *jt;
@@ -419,6 +422,7 @@ void GameMain::testCollisions(cocos2d::CCTime dt)
         
         // delete all hit enemies
         //for (jt = targetsToDelete->begin(); jt != targetsToDelete->end(); jt++)
+        jt = NULL;
         CCARRAY_FOREACH( targetsToDelete, jt )
         {
             //_enemies->removeObject(*jt);
@@ -436,6 +440,7 @@ void GameMain::testCollisions(cocos2d::CCTime dt)
     
     // remove all the projectiles that hit.
     //for (it = projectilesToDelete->begin(); it != projectilesToDelete->end(); it++) {
+    it = NULL;
     CCARRAY_FOREACH( projectilesToDelete, it )
     {
         //CCSprite *projectile = *it;
@@ -445,8 +450,8 @@ void GameMain::testCollisions(cocos2d::CCTime dt)
     }
     
     //for (jt = _enemies->begin(); jt != _enemies->end(); jt++)
-    CCObject *jt = NULL;
-    CCARRAY_FOREACH( projectilesToDelete, jt )
+    jt = NULL;
+    CCARRAY_FOREACH( _enemies, jt )
     {
         //CCSprite *target = *jt;
         CCSprite *target = static_cast<CCSprite*>(jt);
