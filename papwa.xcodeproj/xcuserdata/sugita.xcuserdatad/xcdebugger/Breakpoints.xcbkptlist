@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "papwa/GameOverScene.cpp"
-         timestampString = "371907770.041797"
+         timestampString = "372239476.042437"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "55"
-         endingLineNumber = "55"
+         startingLineNumber = "58"
+         endingLineNumber = "58"
          landmarkName = "GameOverLayer::init()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -34,22 +34,24 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "papwa/GameMainScene.cpp"
-         timestampString = "371956279.310407"
+         timestampString = "372238350.576843"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "196"
-         endingLineNumber = "196">
+         startingLineNumber = "202"
+         endingLineNumber = "202"
+         landmarkName = "GameMain::ccTouchEnded(CCTouch *touch, CCEvent *event)"
+         landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "papwa/GameMainScene.cpp"
-         timestampString = "371956638.18245"
+         timestampString = "372238350.576843"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "221"
-         endingLineNumber = "221"
+         startingLineNumber = "227"
+         endingLineNumber = "227"
          landmarkName = "GameMain::ccTouchEnded(CCTouch *touch, CCEvent *event)"
          landmarkType = "5">
       </FileBreakpoint>

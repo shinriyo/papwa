@@ -30,11 +30,14 @@ bool GameOverScene::init()
 
 GameOverScene::~GameOverScene()
 {
-    if (_layer)
+    /*
+     if (_layer)
     {
         _layer->release();
         _layer = NULL;
     }
+    */
+    CC_SAFE_RELEASE_NULL(_layer);
 }
 
 // on "init" you need to initialize your instance
@@ -66,16 +69,20 @@ bool GameOverLayer::init()
 
 void GameOverLayer::gameOverDone()
 {
-//    CCDirector::sharedDirector()->replaceScene(GameMain::scene());
-    CCDirector::sharedDirector()->replaceScene(CCTransitionCrossFade::create(1.0f, GameMain::scene()));
+    //CCDirector::sharedDirector()->replaceScene(GameMain::scene());
+    CCDirector::sharedDirector()->pushScene(CCTransitionCrossFade::create(1.0f, GameMain::scene()));
+    //    CCDirector::sharedDirector()->replaceScene(CCTransitionCrossFade::create(1.0f, GameMain::scene()));
 
 }
 
 GameOverLayer::~GameOverLayer()
 {
+    /*
     if (_label)
     {
         _label->release();
         _label = NULL;
     }
+    */
+    CC_SAFE_RELEASE_NULL(_label);
 }

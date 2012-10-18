@@ -57,7 +57,13 @@ bool GameMain::init()
     {
         return false;
     }
-   
+  
+    // 音楽準備
+	SimpleAudioEngine::sharedEngine()->preloadEffect("pickup.caf");
+	SimpleAudioEngine::sharedEngine()->preloadEffect("hit.caf");
+	SimpleAudioEngine::sharedEngine()->preloadEffect("move.caf");
+	SimpleAudioEngine::sharedEngine()->playBackgroundMusic("TileMap.caf");
+    
     // 敵と弾
 	_enemies = new CCArray();
 	_projectiles = new CCArray();
@@ -249,6 +255,7 @@ void GameMain::ccTouchEnded(CCTouch *touch, CCEvent *event)
         
         // Create a projectile and put it at the player's location
         CCSprite *projectile = CCSprite::create("Projectile.png");
+        projectile->retain();
         projectile->setPosition(_player->getPosition());
         this->addChild(projectile);
         
@@ -477,7 +484,9 @@ void GameMain::win()
 {
     GameOverScene *gameOverScene = GameOverScene::create();
     gameOverScene->getLayer()->getLabel()->setString("You Win!");
-    CCDirector::sharedDirector()->replaceScene(gameOverScene);
+    //CCDirector::sharedDirector()->replaceScene(gameOverScene);
+    //CCDirector::sharedDirector()->pushScene(gameOverScene);
+    CCDirector::sharedDirector()->replaceScene(CCTransitionCrossFade::create(1.0f, gameOverScene));
 }
 
 // 敗北画面
@@ -485,5 +494,7 @@ void GameMain::lose()
 {
     GameOverScene *gameOverScene = GameOverScene::create();
     gameOverScene->getLayer()->getLabel()->setString("You Lose!");
-    CCDirector::sharedDirector()->replaceScene(gameOverScene);
+    //CCDirector::sharedDirector()->replaceScene(gameOverScene);
+    //CCDirector::sharedDirector()->pushScene(gameOverScene);
+    CCDirector::sharedDirector()->replaceScene(CCTransitionCrossFade::create(1.0f, gameOverScene));
 }

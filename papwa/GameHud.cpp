@@ -68,6 +68,8 @@ void GameHud::ccTouchEnded(CCTouch *touch, CCEvent *event)
 
 GameHud::~GameHud()
 {
+    CC_SAFE_RELEASE_NULL(_label);
+//    CC_SAFE_RELEASE_NULL(_gameLayer);
 }
 
 
