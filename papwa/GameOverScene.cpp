@@ -60,9 +60,7 @@ bool GameOverLayer::init()
             NULL));
         
         return true;
-    }
-    else
-    {
+    } else {
         return false;
     }
 }

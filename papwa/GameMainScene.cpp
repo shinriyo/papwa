@@ -111,7 +111,7 @@ bool GameMain::init()
 	//CCMutableArray<CCStringToStringDictionary*>::CCMutableArrayIterator it;
 	//for (it = allObjects->begin(); it != allObjects->end(); ++it)
     CCObject *it = NULL;
-    CCARRAY_FOREACH( allObjects, it )
+    CCARRAY_FOREACH(allObjects, it)
 	{
 		//if ((*it)->objectForKey(std::string("Enemy")) != NULL)
 		if (static_cast<CCDictionary*>(it)->objectForKey("Enemy") != NULL)
@@ -177,7 +177,7 @@ void GameMain::animateEnemy(CCSprite *enemy)
 	// Create the actions
 	//CCFiniteTimeAction *actionMove = CCMoveBy::actionWithDuration(actualDuration, moveBy);
 	CCFiniteTimeAction *actionMove = CCMoveBy::create(actualDuration, moveBy);
-//	CCFiniteTimeAction *actionMoveDone = CCCallFuncN::actionWithTarget(this, callfuncN_selector(HelloWorld::enemyMoveFinished));
+//	CCFiniteTimeAction *actionMoveDone = CCCallFuncN::actionWithTarget(this, callfuncN_selector(GameMain::enemyMoveFinished));
 	CCFiniteTimeAction *actionMoveDone = CCCallFuncN::create(this, callfuncN_selector(GameMain::enemyMoveFinished));
 	//enemy->runAction(CCSequence::actions(actionMove,
 	enemy->runAction(CCSequence::create(actionMove, actionMoveDone, NULL));
@@ -244,7 +244,7 @@ void GameMain::ccTouchEnded(CCTouch *touch, CCEvent *event)
         }
         
          this->setViewpointCenter(_player->getPosition());
-        // 攻撃モード
+    // 攻撃モード
     } else {
         // Find where the touch is
         CCPoint touchLocation = touch->getLocationInView();    
@@ -279,16 +279,15 @@ void GameMain::ccTouchEnded(CCTouch *touch, CCEvent *event)
         int realY = ((realX - projectile->getPosition().x) * ratio) + projectile->getPosition().y;
         CCPoint realDest = ccp(realX, realY);
         
-        
         // Determine the length of how far we're shooting
         int offRealX = realX - projectile->getPosition().x;
         int offRealY = realY - projectile->getPosition().y;
         float length = sqrtf((offRealX*offRealX) + (offRealY*offRealY));
         float velocity = 480/1; // 480pixels/1sec
-        float realMoveDuration = length/velocity;
+        float realMoveDuration = length/velocity; // 時間（秒数）
         
         // Move projectile to actual endpoint
-        // 実際の終了地点まで飛ばす
+        // 実際の終了地点まで飛ばす（移動時間、秒数）
         CCFiniteTimeAction *actionMoveTo = CCMoveTo::create(realMoveDuration, realDest);
 
         // 消す処理
@@ -398,8 +397,7 @@ void GameMain::testCollisions(CCTime dt)
     //for (it = _projectiles->begin(); it != _projectiles->end(); it++) {
     CCObject *it = NULL;
     CCObject *jt = NULL;
-
-    CCARRAY_FOREACH( _projectiles, it )
+    CCARRAY_FOREACH(_projectiles, it)
     {
 
         //CCSprite *projectile = *it;
@@ -410,11 +408,10 @@ void GameMain::testCollisions(CCTime dt)
                                            projectile->getContentSize().height);
         
         CCArray *targetsToDelete = new CCArray();
-       
+ 
         // iterate through enemies, see if any intersect with current projectile
         //for (jt = _enemies->begin(); jt != _enemies->end(); jt++)
-        jt = NULL;
-        CCARRAY_FOREACH( _enemies, jt )
+        CCARRAY_FOREACH(_enemies, jt)
         {
             //CCSprite *target = *jt;
             CCSprite *target = static_cast<CCSprite*>(jt);
@@ -425,6 +422,7 @@ void GameMain::testCollisions(CCTime dt)
                                            target->getContentSize().height);
             
             //if (CCRect::CCRectIntersectsRect(projectileRect, targetRect)) {
+            // 弾にぶつかった敵がいれば配列へ詰める
             if (projectileRect.intersectsRect(targetRect))
             {
                 targetsToDelete->addObject(target);
@@ -433,14 +431,18 @@ void GameMain::testCollisions(CCTime dt)
         
         // delete all hit enemies
         //for (jt = targetsToDelete->begin(); jt != targetsToDelete->end(); jt++)
+        // 消すべき敵
         jt = NULL;
-        CCARRAY_FOREACH( targetsToDelete, jt )
+        CCARRAY_FOREACH(targetsToDelete, jt)
         {
+            // 敵一覧からも実際消す
             //_enemies->removeObject(*jt);
+            _enemies->removeObject(static_cast<CCNode*>(jt));
             //this->removeChild((*jt), true);
             this->removeChild(static_cast<CCNode*>(jt), true);
         }
         
+        // あたった敵が1以上あればぶつかってるので敵を消す
         if (targetsToDelete->count() > 0)
         {
             projectilesToDelete->addObject(projectile);
@@ -452,17 +454,19 @@ void GameMain::testCollisions(CCTime dt)
     // remove all the projectiles that hit.
     //for (it = projectilesToDelete->begin(); it != projectilesToDelete->end(); it++) {
     it = NULL;
-    CCARRAY_FOREACH( projectilesToDelete, it )
+    // 消すべき弾を消す
+    CCARRAY_FOREACH(projectilesToDelete, it)
     {
         //CCSprite *projectile = *it;
         CCSprite *projectile = static_cast<CCSprite*>(it);
         _projectiles->removeObject(projectile, true);
         this->removeChild(projectile, true);
     }
-    
+
+    // 死亡判定
     //for (jt = _enemies->begin(); jt != _enemies->end(); jt++)
     jt = NULL;
-    CCARRAY_FOREACH( _enemies, jt )
+    CCARRAY_FOREACH(_enemies, jt)
     {
         //CCSprite *target = *jt;
         CCSprite *target = static_cast<CCSprite*>(jt);
