@@ -8,12 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		238F292C1622EFB0002007F3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238F292B1622EFB0002007F3 /* QuartzCore.framework */; };
-		238F292E1622EFB0002007F3 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238F292D1622EFB0002007F3 /* OpenGLES.framework */; };
-		238F29301622EFB0002007F3 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238F292F1622EFB0002007F3 /* OpenAL.framework */; };
-		238F29321622EFB0002007F3 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238F29311622EFB0002007F3 /* AudioToolbox.framework */; };
-		238F29341622EFB0002007F3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238F29331622EFB0002007F3 /* AVFoundation.framework */; };
 		238F29361622EFB0002007F3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238F29351622EFB0002007F3 /* UIKit.framework */; };
-		238F29381622EFB0002007F3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238F29371622EFB0002007F3 /* Foundation.framework */; };
 		238F293A1622EFB0002007F3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238F29391622EFB0002007F3 /* CoreGraphics.framework */; };
 		238F293E1622EFB0002007F3 /* CloseNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 238F293D1622EFB0002007F3 /* CloseNormal.png */; };
 		238F29401622EFB0002007F3 /* CloseSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 238F293F1622EFB0002007F3 /* CloseSelected.png */; };
@@ -208,6 +203,26 @@
 		238F2BDB1622EFB9002007F3 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 238F2BDA1622EFB9002007F3 /* AppDelegate.cpp */; };
 		238F2BDE1622EFBA002007F3 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 238F2BDD1622EFBA002007F3 /* HelloWorldScene.cpp */; };
 		238F2BE71622F088002007F3 /* GameMainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 238F2BE51622F088002007F3 /* GameMainScene.cpp */; };
+		23FEC2711634621D0070EB4D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23FEC2701634621D0070EB4D /* Security.framework */; };
+		23FEC2741634622A0070EB4D /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23FEC2731634622A0070EB4D /* CoreAudio.framework */; };
+		23FEC276163462350070EB4D /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23FEC275163462350070EB4D /* CoreFoundation.framework */; };
+		23FEC277163463590070EB4D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238F29331622EFB0002007F3 /* AVFoundation.framework */; };
+		23FEC283163463D50070EB4D /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 23FEC282163463D50070EB4D /* libxml2.dylib */; };
+		23FEC285163463EF0070EB4D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 23FEC284163463EF0070EB4D /* libz.dylib */; };
+		23FEC2861634648E0070EB4D /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238F292F1622EFB0002007F3 /* OpenAL.framework */; };
+		23FEC287163465110070EB4D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238F29311622EFB0002007F3 /* AudioToolbox.framework */; };
+		23FEC2911634A7520070EB4D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23FEC28C1634A7520070EB4D /* Security.framework */; };
+		23FEC2931634A7520070EB4D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23FEC28E1634A7520070EB4D /* UIKit.framework */; };
+		23FEC2941634A7520070EB4D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23FEC28F1634A7520070EB4D /* CoreGraphics.framework */; };
+		23FEC2951634A7520070EB4D /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 23FEC2901634A7520070EB4D /* libcurl.a */; };
+		23FEC29E1634A7620070EB4D /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23FEC2971634A7620070EB4D /* CoreAudio.framework */; };
+		23FEC29F1634A7620070EB4D /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23FEC2981634A7620070EB4D /* CoreFoundation.framework */; };
+		23FEC2A01634A7620070EB4D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23FEC2991634A7620070EB4D /* AudioToolbox.framework */; };
+		23FEC2A11634A7620070EB4D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23FEC29A1634A7620070EB4D /* QuartzCore.framework */; };
+		23FEC2A21634A7620070EB4D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 23FEC29B1634A7620070EB4D /* libz.dylib */; };
+		23FEC2A31634A7620070EB4D /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 23FEC29C1634A7620070EB4D /* libxml2.dylib */; };
+		23FEC2A41634A9750070EB4D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238F292D1622EFB0002007F3 /* OpenGLES.framework */; };
+		23FEC2A61634AB000070EB4D /* background-music-aac.wav in Resources */ = {isa = PBXBuildFile; fileRef = 23FEC2A51634AB000070EB4D /* background-music-aac.wav */; };
 		BD204674162CEAAB0019C148 /* CCUIScrollView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BD204672162CEAAB0019C148 /* CCUIScrollView.cpp */; };
 		BD204678162CEE210019C148 /* projectile-button-off.png in Resources */ = {isa = PBXBuildFile; fileRef = BD204676162CEE210019C148 /* projectile-button-off.png */; };
 		BD204679162CEE210019C148 /* projectile-button-on.png in Resources */ = {isa = PBXBuildFile; fileRef = BD204677162CEE210019C148 /* projectile-button-on.png */; };
@@ -669,6 +684,24 @@
 		239F0AAD162F17780061E4B3 /* move.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = move.caf; path = Resources/move.caf; sourceTree = "<group>"; };
 		239F0AAE162F17780061E4B3 /* pickup.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = pickup.caf; path = Resources/pickup.caf; sourceTree = "<group>"; };
 		239F0AAF162F17780061E4B3 /* TileMap.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = TileMap.caf; path = Resources/TileMap.caf; sourceTree = "<group>"; };
+		23FEC2701634621D0070EB4D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		23FEC2731634622A0070EB4D /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		23FEC275163462350070EB4D /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		23FEC282163463D50070EB4D /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		23FEC284163463EF0070EB4D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		23FEC288163465160070EB4D /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
+		23FEC28A1634655B0070EB4D /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		23FEC28C1634A7520070EB4D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		23FEC28E1634A7520070EB4D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		23FEC28F1634A7520070EB4D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		23FEC2901634A7520070EB4D /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = papwa/libs/cocos2dx/platform/third_party/ios/libraries/libcurl.a; sourceTree = "<group>"; };
+		23FEC2971634A7620070EB4D /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		23FEC2981634A7620070EB4D /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		23FEC2991634A7620070EB4D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		23FEC29A1634A7620070EB4D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		23FEC29B1634A7620070EB4D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		23FEC29C1634A7620070EB4D /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		23FEC2A51634AB000070EB4D /* background-music-aac.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "background-music-aac.wav"; path = "Resources/background-music-aac.wav"; sourceTree = "<group>"; };
 		BD204672162CEAAB0019C148 /* CCUIScrollView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CCUIScrollView.cpp; path = Classes/CCUIScrollView.cpp; sourceTree = "<group>"; };
 		BD204673162CEAAB0019C148 /* CCUIScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCUIScrollView.h; path = Classes/CCUIScrollView.h; sourceTree = "<group>"; };
 		BD204676162CEE210019C148 /* projectile-button-off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "projectile-button-off.png"; path = "Resources/projectile-button-off.png"; sourceTree = "<group>"; };
@@ -693,15 +726,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23FEC2A41634A9750070EB4D /* OpenGLES.framework in Frameworks */,
+				23FEC2861634648E0070EB4D /* OpenAL.framework in Frameworks */,
+				23FEC2741634622A0070EB4D /* CoreAudio.framework in Frameworks */,
+				23FEC276163462350070EB4D /* CoreFoundation.framework in Frameworks */,
+				23FEC287163465110070EB4D /* AudioToolbox.framework in Frameworks */,
 				238F292C1622EFB0002007F3 /* QuartzCore.framework in Frameworks */,
-				238F292E1622EFB0002007F3 /* OpenGLES.framework in Frameworks */,
-				238F29301622EFB0002007F3 /* OpenAL.framework in Frameworks */,
-				238F29321622EFB0002007F3 /* AudioToolbox.framework in Frameworks */,
-				238F29341622EFB0002007F3 /* AVFoundation.framework in Frameworks */,
+				23FEC285163463EF0070EB4D /* libz.dylib in Frameworks */,
+				23FEC283163463D50070EB4D /* libxml2.dylib in Frameworks */,
+				23FEC277163463590070EB4D /* AVFoundation.framework in Frameworks */,
+				23FEC2711634621D0070EB4D /* Security.framework in Frameworks */,
 				238F29361622EFB0002007F3 /* UIKit.framework in Frameworks */,
-				238F29381622EFB0002007F3 /* Foundation.framework in Frameworks */,
 				238F293A1622EFB0002007F3 /* CoreGraphics.framework in Frameworks */,
 				238F2A9A1622EFB5002007F3 /* libcurl.a in Frameworks */,
+				23FEC2911634A7520070EB4D /* Security.framework in Frameworks */,
+				23FEC2931634A7520070EB4D /* UIKit.framework in Frameworks */,
+				23FEC2941634A7520070EB4D /* CoreGraphics.framework in Frameworks */,
+				23FEC2951634A7520070EB4D /* libcurl.a in Frameworks */,
+				23FEC29E1634A7620070EB4D /* CoreAudio.framework in Frameworks */,
+				23FEC29F1634A7620070EB4D /* CoreFoundation.framework in Frameworks */,
+				23FEC2A01634A7620070EB4D /* AudioToolbox.framework in Frameworks */,
+				23FEC2A11634A7620070EB4D /* QuartzCore.framework in Frameworks */,
+				23FEC2A21634A7620070EB4D /* libz.dylib in Frameworks */,
+				23FEC2A31634A7620070EB4D /* libxml2.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -711,6 +758,13 @@
 		238F291C1622EFB0002007F3 = {
 			isa = PBXGroup;
 			children = (
+				23FEC28A1634655B0070EB4D /* CoreMedia.framework */,
+				23FEC288163465160070EB4D /* AudioUnit.framework */,
+				23FEC284163463EF0070EB4D /* libz.dylib */,
+				23FEC282163463D50070EB4D /* libxml2.dylib */,
+				23FEC275163462350070EB4D /* CoreFoundation.framework */,
+				23FEC2731634622A0070EB4D /* CoreAudio.framework */,
+				23FEC2701634621D0070EB4D /* Security.framework */,
 				238F293B1622EFB0002007F3 /* papwa */,
 				238F292A1622EFB0002007F3 /* Frameworks */,
 				238F29281622EFB0002007F3 /* Products */,
@@ -728,13 +782,25 @@
 		238F292A1622EFB0002007F3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				23FEC29B1634A7620070EB4D /* libz.dylib */,
+				23FEC29A1634A7620070EB4D /* QuartzCore.framework */,
+				238F292D1622EFB0002007F3 /* OpenGLES.framework */,
+				23FEC29C1634A7620070EB4D /* libxml2.dylib */,
+				23FEC28E1634A7520070EB4D /* UIKit.framework */,
+				238F29371622EFB0002007F3 /* Foundation.framework */,
+				23FEC2971634A7620070EB4D /* CoreAudio.framework */,
+				23FEC28F1634A7520070EB4D /* CoreGraphics.framework */,
+				238F292F1622EFB0002007F3 /* OpenAL.framework */,
+				23FEC2991634A7620070EB4D /* AudioToolbox.framework */,
+				238F29331622EFB0002007F3 /* AVFoundation.framework */,
+				23FEC2981634A7620070EB4D /* CoreFoundation.framework */,
+				23FEC28C1634A7520070EB4D /* Security.framework */,
+				23FEC2901634A7520070EB4D /* libcurl.a */,
 				238F292B1622EFB0002007F3 /* QuartzCore.framework */,
 				238F292D1622EFB0002007F3 /* OpenGLES.framework */,
 				238F292F1622EFB0002007F3 /* OpenAL.framework */,
 				238F29311622EFB0002007F3 /* AudioToolbox.framework */,
-				238F29331622EFB0002007F3 /* AVFoundation.framework */,
 				238F29351622EFB0002007F3 /* UIKit.framework */,
-				238F29371622EFB0002007F3 /* Foundation.framework */,
 				238F29391622EFB0002007F3 /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
@@ -756,6 +822,7 @@
 			isa = PBXGroup;
 			children = (
 				239F0AAC162F17780061E4B3 /* hit.caf */,
+				23FEC2A51634AB000070EB4D /* background-music-aac.wav */,
 				239F0AAD162F17780061E4B3 /* move.caf */,
 				239F0AAE162F17780061E4B3 /* pickup.caf */,
 				239F0AAF162F17780061E4B3 /* TileMap.caf */,
@@ -1695,6 +1762,7 @@
 				BD204678162CEE210019C148 /* projectile-button-off.png in Resources */,
 				BD204679162CEE210019C148 /* projectile-button-on.png in Resources */,
 				BD38B8F7162E6CAD003BD2D3 /* Projectile.png in Resources */,
+				23FEC2A61634AB000070EB4D /* background-music-aac.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

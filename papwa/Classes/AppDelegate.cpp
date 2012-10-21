@@ -51,7 +51,6 @@ bool AppDelegate::applicationDidFinishLaunching()
     // もしCocosBuildrにしたら
     CCNodeLoaderLibrary * ccNodeLoaderLibrary = CCNodeLoaderLibrary::sharedCCNodeLoaderLibrary();
     CCBReader * ccbReader = new CCBReader(ccNodeLoaderLibrary);
-//    CCNode * node = ccbReader->readNodeGraphFromFile("CCBTest.ccbi");
     CCScene * scene = CCScene::create();
     CCNode * node = ccbReader->readNodeGraphFromFile("CCBTest.ccbi");
     

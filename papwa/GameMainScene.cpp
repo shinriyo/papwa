@@ -62,7 +62,8 @@ bool GameMain::init()
 	SimpleAudioEngine::sharedEngine()->preloadEffect("pickup.caf");
 	SimpleAudioEngine::sharedEngine()->preloadEffect("hit.caf");
 	SimpleAudioEngine::sharedEngine()->preloadEffect("move.caf");
-	SimpleAudioEngine::sharedEngine()->playBackgroundMusic("TileMap.caf");
+	//SimpleAudioEngine::sharedEngine()->playBackgroundMusic("TileMap.caf");
+	SimpleAudioEngine::sharedEngine()->playBackgroundMusic("background-music-aac.wav");
     
     // 敵と弾
 	_enemies = new CCArray();
